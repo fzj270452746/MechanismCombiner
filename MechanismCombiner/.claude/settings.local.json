@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild -scheme MechanismCombiner -destination 'platform=iOS Simulator,name=iPhone 16' -configuration Debug build)"
+    ]
+  }
+}
