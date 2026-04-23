@@ -72,7 +72,8 @@ final class WorkshopViewController: UIViewController {
 
         nodeCountBadge.font = PrismTheme.Glyph.mono(12)
         nodeCountBadge.textColor = PrismTheme.Pigment.aurora
-        headerView.addSubview(nodeCountBadge)
+        nodeCountBadge.textAlignment = .center
+        view.addSubview(nodeCountBadge)
 
         addNodeButton.addTarget(self, action: #selector(showAddNodePicker), for: .touchUpInside)
         headerView.addSubview(addNodeButton)
@@ -129,13 +130,14 @@ final class WorkshopViewController: UIViewController {
         headerView.frame = CGRect(x: 0, y: 0, width: w, height: headerH + safeTop)
         headerSep.frame  = CGRect(x: 0, y: headerH + safeTop - 1, width: w, height: 1)
         titleLabel.frame = CGRect(x: 20, y: safeTop + 14, width: 110, height: 28)
-        nodeCountBadge.frame = CGRect(x: 134, y: safeTop + 18, width: 60, height: 20)
         let clearW: CGFloat = 44
         let addW:   CGFloat = 80
         let tplW:   CGFloat = 80
-        clearButton.frame      = CGRect(x: w - clearW - 8,             y: safeTop + 12, width: clearW, height: 32)
-        addNodeButton.frame    = CGRect(x: w - clearW - addW - 16,     y: safeTop + 12, width: addW,   height: 32)
-        templatesButton.frame  = CGRect(x: w - clearW - addW - tplW - 24, y: safeTop + 12, width: tplW, height: 32)
+        clearButton.frame      = CGRect(x: w - clearW - 8,                y: safeTop + 12, width: clearW, height: 32)
+        addNodeButton.frame    = CGRect(x: w - clearW - addW - 16,        y: safeTop + 12, width: addW,   height: 32)
+        templatesButton.frame  = CGRect(x: w - clearW - addW - tplW - 24, y: safeTop + 12, width: tplW,   height: 32)
+        let tabBarTop = h - 90
+        nodeCountBadge.frame = CGRect(x: 0, y: tabBarTop - 30 - 20, width: w, height: 20)
 
         scrollView.frame = CGRect(x: 0, y: headerH + safeTop, width: w,
                                   height: h - headerH - safeTop - 90)
